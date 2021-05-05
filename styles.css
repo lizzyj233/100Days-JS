@@ -2,7 +2,7 @@
 footer{padding: 2%; 
     text-align: center; 
     font-size: x-small; 
-    color:black;}
+    color:lavender;}
 footer a{color:lavender;}
 
 body{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
@@ -16,6 +16,23 @@ h1{color:deeppink;}
 label{text-align: right;}
 
 /*Styles for classes*/
+.button{
+    position: relative;
+    padding: 3%;
+    background-color: deeppink;
+    color:lavender;
+    border-color: black;
+    border-style: outset;
+}
+.button:hover{
+    position: relative;
+    padding: 3%;
+    background-color: lavender;
+    color:mediumpurple;
+    border-color: black;
+    border-style: inset;
+}
+
 .navigation{
     position: relative;
     overflow: hidden;
@@ -60,9 +77,24 @@ label{text-align: right;}
     color: black;
     background-color: lavender;}
 
+/*ratings styles*/
+.ratings-container {padding: 1%; 
+    width: 50%; 
+    position: relative; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    color: lavender;
+    background-color: mediumpurple;
+    font-size: small ;}  
+.ratings-table{
+    color:lavender;
+    font-size:small;
+}
+
 
 /*post styles*/
-.post-title{color:rebeccapurple;
+.post-title{color:mediumpurple;
 text-align: left}
 .post-date{color:deeppink;
 text-align:right}

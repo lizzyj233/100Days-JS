@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>100 Days Starts Now</title>
     <link href="styles.css" rel="stylesheet">
-    <script src="JS-Objs.js"></script>
 </head>
 <body>
 
@@ -27,13 +26,41 @@
         <td><h3 class="post-title">Pre-Hundred</h3></td>
         <td><h4 class="post-date">May 4, 2021</h4></td>
     </table>
-    <p>On the days preceding the start of 100 days, I created this simple html page with styles etc. - looking sharp, imo! (yes the nav bar is a WIP)</p>
+    <p>On the days preceding the start of 100 days, I created this simple html page with styles etc. - looking sharp, imo!</p>
 </div>
 </div>
+<br>
+<div id="ratings" class="ratings-container">
+    
+    <p>How do you like this page? Please rate each category with <strong style="color:black"> numbers from 0-5</strong>, with 0 being "Liz is such a n00b" and 5 being "Liz is killing it."</p>
+    <form>
+        <table id="ratings-table" class="ratings-table">
+            
+            <tr>
+                <td class="ratings-prompt">Liz knows her shit:</td>
+                <td><input type="number" id="rating-cat-1" class="rating-field" min="0" max=5></td>
+            </tr>
+            
+            <tr>
+                <td>Liz excels at JavaScript:</td>
+                <td><input type="number" id="rating-cat-2" class="rating-field" min="0" max=5></td>
+            </tr>
+            
+            <tr>
+                <td>Liz is one cool cat mama:</td>
+                <td><input type="number" id="rating-cat-3" class="rating-field" min="0" max=5></td>
+            </tr>
 
+        </table><br>
+        <button id="submit-ratings" class="button">Submit Ratings</button>
+    </form>
+    <pre id="log"></pre>
+    <p id="ratings-result" style="display: none;"></p>
+    <script src="/scripts/ratings.js"></script>
+</div>
 </body>
 <footer>
-    <a href="https://twitter.com/lizzydeb233">@lizzydeb233</a><br>
-    <a href="https://github.com/lizzyj233">Github</a>
+    <p>connect with me on twitter <a href="https://twitter.com/lizzydeb233">@lizzydeb233</a></p>
+    <p>find my stuff on <a href="https://github.com/lizzyj233">Github</a></p>  
 </footer>
 </html>
