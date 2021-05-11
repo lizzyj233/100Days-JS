@@ -3,7 +3,7 @@
 
 let ratingsForm = document.querySelector("ratings-form");
 
-ratingsForm.addEventListener("submit", function(event) {
+ratingsForm.addEventListener("click", function(event) {
     console.log("in event listener");
     calculateRating();
     event.preventDefault();
@@ -11,4 +11,5 @@ ratingsForm.addEventListener("submit", function(event) {
 
 function calculateRating(){
     console.log("event listener works." + ratingsForm);
+    
 }
