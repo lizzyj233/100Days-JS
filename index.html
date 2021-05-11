@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>100 Days Starts Now</title>
     <link href="styles.css" rel="stylesheet">
+    
 </head>
 <body>
 
@@ -22,7 +23,6 @@
 <div id="today">
     <!--post template should be as follows, div id change for the day to connect to a function to populate content on view post click-->
     <div id="day1-div" class="content-container">
-        <script src="scripts/day1switch.js"></script>
         <table class="post-header-table">
             <td><h3 class="post-title">Day 1 - JavaScript Switch Statements</h3></td>
             <td><h4 class="post-date">May 10, 2021</h4></td>
@@ -54,29 +54,29 @@
             
             <tr>
                 <td class="ratings-prompt">Liz knows her shit:</td>
-                <td><input type="number" id="rating-cat-1" class="rating-field" min="0" max=5></td>
+                <td><input type="number" id="rating-cat-1" class="rating-field" min="0" max="5"></td>
             </tr>
             
             <tr>
                 <td>Liz excels at JavaScript:</td>
-                <td><input type="number" id="rating-cat-2" class="rating-field" min="0" max=5></td>
+                <td><input type="number" id="rating-cat-2" class="rating-field" min="0" max="5"></td>
             </tr>
             
             <tr>
                 <td>Liz is one cool cat mama:</td>
-                <td><input type="number" id="rating-cat-3" class="rating-field" min="0" max=5></td>
+                <td><input type="number" id="rating-cat-3" class="rating-field" min="0" max="5"></td>
             </tr>
 
         </table><br>
         <button id="submit-ratings" class="button">Submit Ratings</button>
     </form>
-    <pre id="log"></pre>
     <p id="ratings-result" style="display: none;"></p>
-    <script src="/scripts/ratings.js"></script>
 </div>
 </body>
 <footer>
     <p>connect with me on twitter <a href="https://twitter.com/lizzydeb233">@lizzydeb233</a></p>
     <p>find my stuff on <a href="https://github.com/lizzyj233">Github</a></p>  
 </footer>
+<script src="scripts/JS-Switch.js"></script>
+<script src="scripts/ratings.js"></script>
 </html>

@@ -4,11 +4,9 @@
 //This is a fortune teller that uses a switch statement
 
 let fortune;
-let button = document.querySelector("#day1-content");
-console.log(fortune);
+let button = document.getElementById("subDay1");
 
 button.addEventListener("click", (e)=>{
     console.log("hello...");
-    e.preventDefault;
-    
-})
+    e.preventDefault();
+});
