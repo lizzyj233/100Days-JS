@@ -1,4 +1,3 @@
-//These are functions that can pretty much go wherever on the site.
 //calculate received ratings
 
 let ratingsButton = document.getElementById("submit-ratings");
