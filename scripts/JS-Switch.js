@@ -33,7 +33,7 @@ function fortuneMaker(ln){
             message += `You will party all night long with Party Pat.`;
             break;
         case 10:
-            message += ``;
+            message += `Meow! Your newest furry friend is at the door.`;
             break;
         default:
             message += `is not a lucky number. Misfortune shall come your way!`;
