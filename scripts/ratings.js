@@ -19,9 +19,28 @@ function calculateRating(a, b, c){
       let z = parseInt(c);
       let total = x + y + z;
       let avgRating = total/3;
-      console.log(avgRating.toFixed(1));
+      avgRating = avgRating.toFixed(1);
+      createResponse(avgRating);
     }
     catch(error){
       console.log("not numbers");
     }
+}
+
+function createResponse(rating){
+  let response = `Average rating of ${rating}. `;
+  if(rating >= 4){
+    response += `Thank you for such <b>generous</b> feedback. I appreciate YOU!`;
+  }
+  else if((rating >= 2) && (rating < 4)){
+    response += `Umm okay. thanks i guess....?`;
+  }
+  else if(rating <2) {
+    response += `Your feedback is <b>not welcome</b>. byeeeee!`;
+  }
+  else{
+    response = `Your ratings are not valid. Please submit using only numbers 0-5!`;
+  }
+  document.getElementById("ratings-result").innerHTML = response;
+  document.getElementById("ratings-result").style.display = "block";
 }
