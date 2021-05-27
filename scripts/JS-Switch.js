@@ -12,7 +12,7 @@ fortuneButton.addEventListener("click", (e)=>{
 });
 
 function fortuneMaker(ln){
-    let message = `<span style="color:mediumpurple;"><b>Lucky Number ${ln}: </span></b>`;
+    let message = `<b>Lucky Number ${ln}: </b>`;
     switch(ln){
         case 1:
             message += `You will go to Taco Bell today and regret it tomorrow.`;

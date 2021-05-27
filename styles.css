@@ -1,38 +1,63 @@
 /*Styles for primary components*/
 footer{padding: 2%; 
     text-align: center; 
-    font-size: x-small; 
-    color:lavender;}
-footer a{color:lavender;}
+    font-size: small; 
+    color:chocolate;}
+footer a{color:chocolate;}
 
-body{font-family: 'Courier New', Courier, monospace; 
-    background-color:black }
+body{font-family: Georgia, 'Times New Roman', Times, serif; 
+    background-color:brown }
 
-a{color:deeppink;
+a{color:tomato;
     text-decoration: none;}
 
-h1{color:deeppink;}
+h1{color:tomato;}
 
 label{text-align: right;}
 
+table{color:linen;}
+
 /*Styles for classes*/
+/*Colored button to dark color on hover*/
 .button{
     position: relative;
     padding: .5%;
-    background-color: deeppink;
-    color:lavender;
-    border-color: black;
+    background-color: tomato;
+    color:linen;
+    border-color: firebrick;
     border-style: outset;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
 }
 .button:hover{
     position: relative;
     padding: .5%;
-    background-color: lavender;
-    color:mediumpurple;
-    border-color: black;
+    background-color: brown;
+    color:linen;
+    border-color: firebrick;
     border-style: inset;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*White button, to color on hover*/
+.button2{
+    position: relative;
+    padding: .5%;
+    background-color: linen;
+    color:tomato;
+    border-color: firebrick;
+    border-style: outset;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+.button2:hover{
+    position: relative;
+    padding: .5%;
+    background-color: firebrick;
+    color:linen;
+    border-color: brown;
+    border-style: inset;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .navigation{
@@ -40,22 +65,22 @@ label{text-align: right;}
     overflow: hidden;
     padding: 1%;
     text-align: center;
-    background-color:deeppink;
+    background-color:tomato;
 }
 .navigation a{
-    color: lavender;
+    color: firebrick;
     text-decoration: none;
     padding: 5%;
 }
 .navigation a:hover{
-    color: deeppink;
-    background-color: black;
+    color: chocolate;
+    background-color: firebrick;
     text-decoration: none;
     padding: 5%;
 }
 .navigation a:active{
-    color: black;
-    background: lavender;
+    color: chocolate;
+    background: firebrick;
     text-decoration: none;
     padding: 5%;
 }
@@ -68,7 +93,7 @@ label{text-align: right;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color:mediumpurple;}
+    color:linen;}
 
 .content-container {padding: 1%; 
     width: 80%; 
@@ -76,8 +101,17 @@ label{text-align: right;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color: black;
-    background-color: lavender;}
+    color: chocolate;
+    background-color: linen;}
+
+.subcontent-container {padding: 1%; 
+    width: 95%; 
+    position: relative; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    color: linen;
+    background-color: chocolate;}
 
 /*ratings styles*/
 .ratings-container {padding: 1%; 
@@ -86,19 +120,19 @@ label{text-align: right;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color: lavender;
-    background-color: mediumpurple;
+    color: chocolate;
+    background-color: linen;
     font-size: small ;}  
 .ratings-table{
-    color:lavender;
+    color:chocolate;
     font-size:small;
 }
 
 
 /*post styles*/
-.post-title{color:mediumpurple;
+.post-title{color:tomato;
 text-align: left}
-.post-date{color:deeppink;
+.post-date{color:firebrick;
 text-align:right}
 .post-header-table{
     width: 100%;

@@ -2,6 +2,7 @@
 
 let createObjButton = document.getElementById("buildObject");
 let buildConstructorButton = document.getElementById("buildConstructor");
+let customConstructButton = document.getElementById("submit-day16");
 
 createObjButton.addEventListener("click", (e)=>{
     makeObjects();
@@ -12,6 +13,11 @@ buildConstructorButton.addEventListener("click", (e)=>{
     makeConstructor();
     e.preventDefault();
 });
+
+customConstructButton.addEventListener("click", (e)=>{
+    customConstruction();
+    e.preventDefault();
+})
 
 function makeObjects(){
     let objMessage;
@@ -24,7 +30,7 @@ function makeObjects(){
     person.age = 26;
     person.isAdult = function(){return this.age >= 18;}
     
-    objMessage = `${person.Name} is an adult: ${person.isAdult()}. <br>`;
+    objMessage = `${person.Name} is an adult: ${person.isAdult()}. `;
 
 
     //create an object with a function
@@ -33,28 +39,30 @@ function makeObjects(){
             firstName: fname,
             lastName: lname
         };
-        objMessage += `newPerson properties longhand: ${newPerson.firstName} ${newPerson.lastName}. <br>`;
+        objMessage += `newPerson properties longhand: ${newPerson.firstName} ${newPerson.lastName}. `;
 
         //do the same thing as above with Property shorthand
         let newPerson2 = {
             fname,
             lname
         };
-        objMessage += `newPerson2 properties shorthand: ${newPerson2.fname} ${newPerson2.lname}. <br>`;
+        objMessage += `newPerson2 properties shorthand: ${newPerson2.fname} ${newPerson2.lname}. `;
     }
     registerUser('Lil','Debbie');
 
     //manipulate and discover the keys of objects
-    objMessage += `${(Object.keys(person))} are the properties in the "person" object. <br>`;
+    objMessage += `${(Object.keys(person))} are the properties in the "person" object. `;
     for (let x in person){
         objMessage += `${x} `;
     }
     objMessage += ` is another way to access the properties in "person"!`;
 
-    document.getElementById("day16-content-1").innerHTML = objMessage;
+    console.log(objMessage);
+    document.getElementById("day16-content-1").innerHTML = "Magical objects being created behind the scenes -- check the console!";
     document.getElementById("day16-content-1").style.display = "block";
     
 }
+
 
 function makeConstructor(){
     
@@ -65,6 +73,34 @@ function makeConstructor(){
     }
     let myPet = new Pet("Penny", "Cat");
 
-    document.getElementById("day16-content-2").innerHTML = `You've constructed an imaginary pet! Its name is ${myPet.name} and it is a ${myPet.typeOfAnimal}.`;
+    console.log(`You've constructed an imaginary pet! Its name is ${myPet.name} and it is a ${myPet.typeOfAnimal}.`);
+    document.getElementById("day16-content-2").innerHTML = `Construction under way -- check the console!`;
     document.getElementById("day16-content-2").style.display = "block";
+}
+
+
+function customConstruction(){
+    function profile(name, age, faveColor, pets, advice){
+        this.name = name;
+        this.age = age;
+        this.faveColor = faveColor;
+        this.pets = pets;
+        this.advice = advice;
+    }
+
+    let tempName = document.getElementById("day-16-name").value;
+    let tempAge = document.getElementById("day-16-age").value;
+    let tempColor = document.getElementById("day-16-color").value;
+    let tempPets = document.getElementById("day-16-pet").value;
+    let tempAdvice = document.getElementById("day-16-advice").value;
+
+    if((tempName != "") && (tempAge != "") && (tempColor != "") && (tempPets != "") && (tempAdvice != "")){
+        let yourLife = new profile(tempName, tempAge, tempColor, tempPets, tempAdvice);
+
+        document.getElementById("day16-Construct").innerHTML = `<strong>Here's a little bit about ${yourLife.name}</strong>. <br> ${yourLife.name} has spent all day, every day, of the last ${yourLife.age} years surrounding themselves with ${yourLife.faveColor} things and coping with life by spending an unhealthy amount of time with their trust sidekick, ${yourLife.pets}. One piece of valuable advice that ${yourLife.name} would give to anyone who also likes ${yourLife.faveColor} is: ${yourLife.advice}.`;
+        document.getElementById("day16-Construct").style.display = "block";
+    } else{
+        document.getElementById("day16-Construct").innerHTML = "Incomplete form. Don't be lazy: fill it out!";
+        document.getElementById("day16-Construct").style.display = "block";
+    }
 }
