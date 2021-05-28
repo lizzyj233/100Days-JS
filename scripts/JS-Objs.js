@@ -1,6 +1,4 @@
-'use strict';
-
-let createObjButton = document.getElementById("buildObject");
+let createObjButton = document.getElementById("buildObjects");
 let buildConstructorButton = document.getElementById("buildConstructor");
 let customConstructButton = document.getElementById("submit-day16");
 
@@ -47,6 +45,16 @@ function makeObjects(){
             lname
         };
         objMessage += `newPerson2 properties shorthand: ${newPerson2.fname} ${newPerson2.lname}. `;
+
+        //nested key values
+        let newPerson3 = {
+            name:{
+                firstname: fname,
+                lastname: lname
+            },
+        age: 100,
+        };
+        objMessage += `newPerson3 with fname & lname inside name key: ${newPerson3.name.firstname} ${newPerson3.name.lastname} of age ${newPerson3.age}. `;
     }
     registerUser('Lil','Debbie');
 
@@ -61,6 +69,33 @@ function makeObjects(){
     document.getElementById("day16-content-1").innerHTML = "Magical objects being created behind the scenes -- check the console!";
     document.getElementById("day16-content-1").style.display = "block";
     
+
+    let singer = {
+        first: 'Taylor',
+        last: 'Swift'
+    };
+
+    Object.defineProperty(singer, 'fullName',
+    {
+        get: function(){
+            return this.first + ' ' + this.last;
+        }
+    });
+    console.log(singer.fullName);
+
+    Object.defineProperty(singer, 'fullName',
+    {
+        get: function(){
+            return this.first + ' ' + this.last;
+        },
+        set: function(value){
+            var nameParts = value.split(' ');
+            this.first = nameParts[0];
+            this.last = nameParts[1];
+        }
+    });
+    singer.fullName = 'Miley Cyrus';
+    console.log(singer.fullName);
 }
 
 
@@ -100,7 +135,7 @@ function customConstruction(){
         document.getElementById("day16-Construct").innerHTML = `<strong>Here's a little bit about ${yourLife.name}</strong>. <br> ${yourLife.name} has spent all day, every day, of the last ${yourLife.age} years surrounding themselves with ${yourLife.faveColor} things and coping with life by spending an unhealthy amount of time with their trust sidekick, ${yourLife.pets}. One piece of valuable advice that ${yourLife.name} would give to anyone who also likes ${yourLife.faveColor} is: ${yourLife.advice}.`;
         document.getElementById("day16-Construct").style.display = "block";
     } else{
-        document.getElementById("day16-Construct").innerHTML = "Incomplete form. Don't be lazy: fill it out!";
+        document.getElementById("day16-Construct").innerHTML = `<span style='color: firebrick;'><strong>Incomplete form. Don't be lazy: fill it out!</strong></span>`;
         document.getElementById("day16-Construct").style.display = "block";
     }
 }
