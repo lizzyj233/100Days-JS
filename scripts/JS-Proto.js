@@ -37,4 +37,10 @@
         ${meow.name} is good: ${meow.isGood}
         ${woof.name} is good: ${woof.isGood}`);
 
+    //if you change the value of the property and not the prototype, the prototype is not affected.
+    console.log(`Candy did the dishes and earned back some points. She is good now but actually still up to no good.`);
+    woof.isGood = true;
+    console.log(`Candy is good currently (property value)? ${woof.isGood}
+    Is Candy always good (prototype)? ${woof.__proto__.isGood}`);
+    //when JS runs code as in getting the value of woof.isGood, it first checks to see if the object specifically has a property called "isGood" (returns this if it does and does not check proto) -- if it does not, it checks the protoype for a property called "isGood" (returns this if it does, otherwise undefined). 
 })();
