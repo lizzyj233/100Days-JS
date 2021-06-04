@@ -9,7 +9,7 @@
 let countDownDate = new Date("Aug 19, 2021 12:00:00").getTime(); //100th day-ish
 
 // Update the count down every 1 second
-let x = setInterval(function() {
+(function() {
 
   // Get today's date and time
   let now = new Date().getTime();
