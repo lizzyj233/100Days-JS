@@ -4,6 +4,7 @@
     <p>find my stuff on <a href="https://github.com/lizzyj233">Github</a></p>  `;
 })();
 
+
 //create day countdown -- messed with code found online for this
 let countDownDate = new Date("Aug 19, 2021 12:00:00").getTime(); //100th day-ish
 
