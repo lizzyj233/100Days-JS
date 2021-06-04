@@ -2,62 +2,62 @@
 footer{padding: 2%; 
     text-align: center; 
     font-size: small; 
-    color:chocolate;}
-footer a{color:chocolate;}
+    color:darkslateblue;}
+footer a{color:darkslateblue;}
 
-body{font-family: Georgia, 'Times New Roman', Times, serif; 
-    background-color:brown }
+body{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    background-color:lightgreen }
 
-a{color:tomato;
+a{color:mintcream;
     text-decoration: none;}
 
-h1{color:tomato;}
+h1{color:mintcream;}
 
 label{text-align: right;}
 
-table{color:linen;}
+table{color:darkslateblue;}
 
 /*Styles for classes*/
 /*Colored button to dark color on hover*/
 .button{
     position: relative;
     padding: .5%;
-    background-color: tomato;
-    color:linen;
-    border-color: firebrick;
+    background-color: mintcream;
+    color:darkslateblue;
+    border-color: lightgray;
     border-style: outset;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: medium;
 }
 .button:hover{
     position: relative;
     padding: .5%;
-    background-color: brown;
-    color:linen;
-    border-color: firebrick;
+    background-color: lightgreen;
+    color:darkslateblue;
+    border-color: lightgray;
     border-style: inset;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /*White button, to color on hover*/
 .button2{
     position: relative;
     padding: .5%;
-    background-color: linen;
-    color:tomato;
-    border-color: firebrick;
+    background-color: darkslateblue;
+    color:mintcream;
+    border-color: lightgray;
     border-style: outset;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: medium;
 }
 .button2:hover{
     position: relative;
     padding: .5%;
-    background-color: firebrick;
-    color:linen;
-    border-color: brown;
+    background-color: lightgray;
+    color:darkslateblue;
+    border-color: lightgreen;
     border-style: inset;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .navigation{
@@ -65,16 +65,16 @@ table{color:linen;}
     overflow: hidden;
     padding: 1%;
     text-align: center;
-    background-color:tomato;
+    background-color:mintcream;
 }
 .navigation a{
-    color: firebrick;
+    color: darkslateblue;
     text-decoration: none;
     padding: 1%;
 }
 .navigation a:hover{
-    color: chocolate;
-    background-color: firebrick;
+    color: lightgray;
+    background-color: darkslateblue;
     text-decoration: none;
     padding: 1%;
 }
@@ -87,7 +87,7 @@ table{color:linen;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color:linen;}
+    color:darkslateblue;}
 
 .content-container {padding: 1%; 
     width: 80%; 
@@ -95,8 +95,8 @@ table{color:linen;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color: chocolate;
-    background-color: linen;}
+    color: lightgray;
+    background-color: darkslateblue;}
 
 .subcontent-container {padding: 1%; 
     width: 98%; 
@@ -104,8 +104,8 @@ table{color:linen;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color: linen;
-    background-color: tomato;}
+    color: darkslateblue;
+    background-color: mintcream;}
 
 /*ratings styles*/
 .ratings-container {padding: 1%; 
@@ -114,19 +114,19 @@ table{color:linen;}
     display: block; 
     margin-left: auto; 
     margin-right: auto;
-    color: chocolate;
-    background-color: linen;
+    color: lightgray;
+    background-color: darkslateblue;
     font-size: small ;}  
 .ratings-table{
-    color:chocolate;
+    color:lightgray;
     font-size:small;
 }
 
 
 /*post styles*/
-.post-title{color:tomato;
+.post-title{color:mintcream;
 text-align: left}
-.post-date{color:firebrick;
+.post-date{color:lightgray;
 text-align:right}
 .post-header-table{
     width: 100%;
