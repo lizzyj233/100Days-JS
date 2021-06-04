@@ -70,19 +70,13 @@ table{color:linen;}
 .navigation a{
     color: firebrick;
     text-decoration: none;
-    padding: 5%;
+    padding: 1%;
 }
 .navigation a:hover{
     color: chocolate;
     background-color: firebrick;
     text-decoration: none;
-    padding: 5%;
-}
-.navigation a:active{
-    color: chocolate;
-    background: firebrick;
-    text-decoration: none;
-    padding: 5%;
+    padding: 1%;
 }
 
 .title-container {padding: 1%; 
