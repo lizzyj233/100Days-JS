@@ -22,7 +22,7 @@ let countDownDate = new Date("Aug 19, 2021 12:00:00").getTime(); //100th day-ish
   let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
   // Display the result in the element with id="demo"
-  document.getElementById("countdown").innerHTML = `<b>Time Remaining:</b>  ${days}days  ${hours}hours`;
+  document.getElementById("countdown").innerHTML = `<b>Time Remaining:</b>  ${days}days`;
   document.getElementById("countdown").style.display = "block";
 
   // If the count down is finished, write some text 
