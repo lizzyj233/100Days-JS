@@ -2,7 +2,7 @@
   "name": "my-js-projects",
   "version": "1.0.0",
   "description": "My JS Projects",
-  "main": "script.js",
+  "main": "pages/index.html",
   "scripts": {
     "start": "lite-server"
   },
