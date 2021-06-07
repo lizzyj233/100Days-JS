@@ -20,6 +20,7 @@ let cart = []; //update on ATC clicks
 let subtotal = 0.0; //update on ATC clicks
 let updateSubtotalATC = cost => subtotal += cost; //updates on ATC
 let inventoryList = " "; //to display on the html
+let cartSummary = " "; //to display on the html when cart is updated from empty
 
 (function (){
     function createInventory(item, quantAvail, itemPrice){
@@ -52,10 +53,12 @@ displayInventory(...inventory);
 //Add to cart button actions
 let ATCJeansButton = document.getElementById("ATCJeans");
 ATCJeansButton.addEventListener("click", (e)=>{
-    cart.push(inventory[0]); //add Jeans item property to cart array
-    console.log(cart);
-    updateSubtotalATC(inventory[0].itemPrice); //update cart subtotal with Jeans itemPrice
-    console.log(subtotal);
-    //TODO: decrease Jeans inventory quantity
+    ATC(inventory[0]);
     e.preventDefault();
 });
+
+function ATC (item){
+    cart.push(item); //add inventory object to cart array
+    updateSubtotalATC(item.itemPrice); //update cart subtotal
+    item.quantAvail -= 1; //update item quantity available
+}
