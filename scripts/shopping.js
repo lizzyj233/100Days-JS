@@ -7,20 +7,19 @@
 //add button to clear cart
 //add button to submit order and provide response
 
-//TODO: IIFE                    DONE
-//TODO: arrow function
 //TODO: apply()
 //TODO: call()
 //TODO: bind()
 //TODO: use function closure
 //TODO: use default parameters
 //TODO: use rest parameters
-//TODO: use stream operator     DONE
 //OPTIONAL: eval(), escape(), unescape(), parseInt(), parseFloat()
 
 let inventory = []; //initiate and update quantities on ATC clicks
-let cart = {}; //update on ATC clicks
-let inventoryList = " ";
+let cart = []; //update on ATC clicks
+let subtotal = 0.0; //update on ATC clicks
+let updateSubtotalATC = cost => subtotal += cost; //updates on ATC
+let inventoryList = " "; //to display on the html
 
 (function (){
     function createInventory(item, quantAvail, itemPrice){
@@ -53,5 +52,10 @@ displayInventory(...inventory);
 //Add to cart button actions
 let ATCJeansButton = document.getElementById("ATCJeans");
 ATCJeansButton.addEventListener("click", (e)=>{
+    cart.push(inventory[0]); //add Jeans item property to cart array
+    console.log(cart);
+    updateSubtotalATC(inventory[0].itemPrice); //update cart subtotal with Jeans itemPrice
+    console.log(subtotal);
+    //TODO: decrease Jeans inventory quantity
     e.preventDefault();
 });
