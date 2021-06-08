@@ -10,8 +10,7 @@
 //TODO: apply()
 //TODO: call()
 //TODO: bind()
-//TODO: use function closure
-//TODO: use default parameters
+//TODO: use function closur
 //TODO: use rest parameters
 //OPTIONAL: eval(), escape(), unescape(), parseInt(), parseFloat()
 
@@ -19,8 +18,6 @@ let inventory = []; //initiate and update quantities on ATC clicks
 let cart = []; //update on ATC clicks
 let subtotal = 0.0; //update on ATC clicks
 let updateSubtotalATC = cost => subtotal += cost; //updates on ATC
-let inventoryList = " "; //to display on the html
-let cartSummary = " "; //to display on the html when cart is updated from empty
 
 (function (){
     function createInventory(item, quantAvail, itemPrice){
@@ -41,8 +38,8 @@ let cartSummary = " "; //to display on the html when cart is updated from empty
 
 //use the spread operator to display the inventory list
 function displayInventory(...inventory){
+    let inventoryList = " "; //to display on the html
     inventory.forEach(function(items){
-        console.log(items.item);
         inventoryList += 
             `<strong>${items.item}</strong>: ${items.quantAvail} available for $${items.itemPrice} per item <button id="ATC${items.item}" class="button2">Add to Cart</button><br><br>`;
     });
@@ -53,7 +50,9 @@ displayInventory(...inventory);
 //Add to cart button actions
 let ATCJeansButton = document.getElementById("ATCJeans");
 ATCJeansButton.addEventListener("click", (e)=>{
+    console.log(inventory[0].quantAvail);
     ATC(inventory[0]);
+    displayInventory(...inventory);
     e.preventDefault();
 });
 
@@ -61,4 +60,14 @@ function ATC (item){
     cart.push(item); //add inventory object to cart array
     updateSubtotalATC(item.itemPrice); //update cart subtotal
     item.quantAvail -= 1; //update item quantity available
+    updateCartSummary();
+}
+
+//Use fn with default param; Update message displayed on html with cart summary
+function updateCartSummary(message = "Order Summary: "){
+    let products = "";
+    for (x of cart){
+        products += `${x.item}<br>`;
+    }
+    document.getElementById("cart").innerHTML = `<b>${message}</b> <br> $${subtotal} <br> ${products}`;
 }
