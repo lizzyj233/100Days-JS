@@ -10,8 +10,7 @@
 //TODO: apply()
 //TODO: call()
 //TODO: bind()
-//TODO: use function closur
-//TODO: use rest parameters
+//TODO: use function closure
 //OPTIONAL: eval(), escape(), unescape(), parseInt(), parseFloat()
 
 let inventory = []; //initiate and update quantities on ATC clicks
@@ -36,7 +35,7 @@ let updateSubtotalATC = cost => subtotal += cost; //updates on ATC
     inventory = [Jeans, Jacket, Shirt, Sneakers, Socks, Hat];
 })();
 
-//use the spread operator to display the inventory list
+//use the spread operator argument and a rest paramter to display the inventory list
 function displayInventory(...inventory){
     let inventoryList = " "; //to display on the html
     inventory.forEach(function(items){
@@ -52,6 +51,46 @@ let ATCJeansButton = document.getElementById("ATCJeans");
 ATCJeansButton.addEventListener("click", (e)=>{
     console.log(inventory[0].quantAvail);
     ATC(inventory[0]);
+    displayInventory(...inventory);
+    e.preventDefault();
+});
+
+let ATCJacketButton = document.getElementById("ATCJacket");
+ATCJacketButton.addEventListener("click", (e)=>{
+    console.log(inventory[1].quantAvail);
+    ATC(inventory[1]);
+    displayInventory(...inventory);
+    e.preventDefault();
+});
+
+let ATCShirtButton = document.getElementById("ATCShirt");
+ATCShirtButton.addEventListener("click", (e)=>{
+    console.log(inventory[2].quantAvail);
+    ATC(inventory[2]);
+    displayInventory(...inventory);
+    e.preventDefault();
+});
+
+let ATCSneakersButton = document.getElementById("ATCSneakers");
+ATCSneakersButton.addEventListener("click", (e)=>{
+    console.log(inventory[3].quantAvail);
+    ATC(inventory[3]);
+    displayInventory(...inventory);
+    e.preventDefault();
+});
+
+let ATCSocksButton = document.getElementById("ATCSocks");
+ATCSocksButton.addEventListener("click", (e)=>{
+    console.log(inventory[4].quantAvail);
+    ATC(inventory[4]);
+    displayInventory(...inventory);
+    e.preventDefault();
+});
+
+let ATCHatButton = document.getElementById("ATCHat");
+ATCHatButton.addEventListener("click", (e)=>{
+    console.log(inventory[5].quantAvail);
+    ATC(inventory[5]);
     displayInventory(...inventory);
     e.preventDefault();
 });
