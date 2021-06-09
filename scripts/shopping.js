@@ -1,17 +1,6 @@
-//create list of items available to buy with quantities available
-//allow user to add items to cart
-//update item quantities
-//update cart 
-//create cart summary -- items, cost
-//add button to remove items from cart
-//add button to clear cart
-//add button to submit order and provide response
-
-//TODO: apply()
-//TODO: call()
 //TODO: bind()
 //TODO: use function closure
-//OPTIONAL: eval(), escape(), unescape(), parseInt(), parseFloat()
+//OPTIONAL: eval(), escape(), unescape(), parseInt()
 
 let inventory = []; //initiate and update quantities on ATC clicks
 let cart = []; //update on ATC clicks
@@ -49,7 +38,6 @@ displayInventory(...inventory);
 //Add to cart button actions
 let ATCJeansButton = document.getElementById("ATCJeans");
 ATCJeansButton.addEventListener("click", (e)=>{
-    console.log(inventory[0].quantAvail);
     ATC(inventory[0]);
     displayInventory(...inventory);
     e.preventDefault();
@@ -57,7 +45,6 @@ ATCJeansButton.addEventListener("click", (e)=>{
 
 let ATCJacketButton = document.getElementById("ATCJacket");
 ATCJacketButton.addEventListener("click", (e)=>{
-    console.log(inventory[1].quantAvail);
     ATC(inventory[1]);
     displayInventory(...inventory);
     e.preventDefault();
@@ -65,7 +52,6 @@ ATCJacketButton.addEventListener("click", (e)=>{
 
 let ATCShirtButton = document.getElementById("ATCShirt");
 ATCShirtButton.addEventListener("click", (e)=>{
-    console.log(inventory[2].quantAvail);
     ATC(inventory[2]);
     displayInventory(...inventory);
     e.preventDefault();
@@ -73,15 +59,14 @@ ATCShirtButton.addEventListener("click", (e)=>{
 
 let ATCSneakersButton = document.getElementById("ATCSneakers");
 ATCSneakersButton.addEventListener("click", (e)=>{
-    console.log(inventory[3].quantAvail);
     ATC(inventory[3]);
     displayInventory(...inventory);
+    alertATCBonus.call(undefined, inventory[1].item, inventory[1].itemPrice, "Premium Socks", "29.78");//not practical, just an example
     e.preventDefault();
 });
 
 let ATCSocksButton = document.getElementById("ATCSocks");
 ATCSocksButton.addEventListener("click", (e)=>{
-    console.log(inventory[4].quantAvail);
     ATC(inventory[4]);
     displayInventory(...inventory);
     e.preventDefault();
@@ -89,7 +74,6 @@ ATCSocksButton.addEventListener("click", (e)=>{
 
 let ATCHatButton = document.getElementById("ATCHat");
 ATCHatButton.addEventListener("click", (e)=>{
-    console.log(inventory[5].quantAvail);
     ATC(inventory[5]);
     displayInventory(...inventory);
     e.preventDefault();
@@ -110,3 +94,16 @@ function updateCartSummary(message = "Order Summary: "){
     }
     document.getElementById("cart").innerHTML = `<b>${message}</b> <br> $${subtotal} <br> ${products}`;
 }
+
+function alertATCBonus(item, price, bonus, bonusValue){
+    alert(`When you order a ${item} for $${price}, you also receive bonus ${bonus} valued at $${parseFloat(bonusValue)}!`);
+}
+
+(function (){
+    displayComingSoon.apply(undefined,["sunglasses", "tote bag"]);//idk why this works, seems silly to me.
+    
+    function displayComingSoon(first, second){
+        let message = "Coming soon: " + first + " and " + second;
+        alert(message);
+    }
+})();
