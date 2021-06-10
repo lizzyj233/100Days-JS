@@ -33,8 +33,10 @@
         static fromPerson(person){
             return new Student(person.firstName, person.lastName, person.age);
         }
+        static semester ="FALL2021";
+
         static studentID(){
-            return 123456;
+            return Math.random();
         }
 
         enroll(courseId){
@@ -64,6 +66,7 @@
 
     let lizStudent = Student.fromPerson(liz);//uses an already existing Person object to create a Student object via static function
     console.log(lizStudent);
-    console.log(Student.studentID());//static functions do not require an object to be created to be accessed
+    console.log(Student.semester);//static functions do not require an object to be created to be accessed
+    console.log(Student.studentID());
     
 })();
