@@ -1,7 +1,5 @@
 'use strict';
 
-let write = '';
-
 (function(){
     //classes can replace constructor functions
     class Person{
@@ -11,6 +9,7 @@ let write = '';
             this.age = age;
             this.membership = "New Member";//you don't need to take parameters when constructing
         }
+        //getters are default set to false enumerable so won't display when you log the whole Person object - the getter is on the object prototype
         get fullName () {
             return this.firstName + ' ' + this.lastName;
         }
@@ -19,12 +18,39 @@ let write = '';
             this.firstName = nameParts[0];
             this.lastName = nameParts[1];
         }
+        //you can put functions inside your classes
+        isAdult(){
+            return this.age >= 18;
+        }
     }
+
+    //inherit from another class using "extends"
+    class Student extends Person {
+        constructor(firstName, lastName, age){
+            super(firstName, lastName, age);//super() calls the constructor on the class we are extending
+            this._enrolledCourses = [];
+        }
+        enroll(courseId){
+            this._enrolledCourses.push(courseId);
+        }
+        getCourses(){
+            return this.fullName + "'s enrolled courses are: " + this._enrolledCourses.join(', ');
+        }
+    }
+
+    Object.defineProperty(Person.prototype, 'fullName', {enumerable: true});//make the class getter enumerable
+
     let liz = new Person ('Liz', 'Loftus', 26);
-    write = liz;
-    console.log(write);
+    console.log(liz);
 
     liz.fullName = "Penny Lane";
-    write += liz.fullName;
-    console.log(write);
+
+    console.log(liz.fullName);
+    console.log(liz.isAdult());
+
+    let kyle = new Student('Kyle', 'Mathias', 27);
+    kyle.enroll('MA101');
+    kyle.enroll('CS120');
+    console.log(kyle);
+    console.log(kyle.getCourses());
 })();
