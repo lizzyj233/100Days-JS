@@ -6,7 +6,7 @@
 
 
 //create day countdown -- messed with code found online for this
-let countDownDate = new Date("Aug 19, 2021 12:00:00").getTime(); //100th day-ish
+let countDownDate = new Date("Aug 19, 2021 00:00:00").getTime(); //100th day-ish
 
 // Update the count down every 1 second
 (function() {

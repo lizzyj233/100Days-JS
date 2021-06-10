@@ -139,3 +139,65 @@ function customConstruction(){
         document.getElementById("day16-Construct").style.display = "block";
     }
 }
+
+//built in JS objects
+//Math Objects
+(function (){
+    console.log(`Pi equals: ${Math.PI}. 
+The "max" between 1, 22, 5 is ${Math.max(1, 22, 5)}.
+27.123 "round"ed up is ${Math.round(27.123)}.`);
+})();
+
+//Date objects
+(function (){
+    let date = new Date();//passing no params represents the current date & time
+    console.log(`NOW is: ${date}!`);
+
+    let beginningOfTime = new Date(0);//0 represents Jan 1, 1970 at 12:00AM GMT -- this is called "unix epoch time"... woo!
+    console.log(beginningOfTime);
+
+    let progress = new Date(1000);//1000 milliseconds, or 1 second past Jan 1, 1970 12AM GMT
+    console.log(progress);
+
+    let today = new Date(2021, 5, 10, 16, 30, 57);//year, month(0 based, for no reason), day, hour, minute, second, millisecond - standard way to pass a date with separate ints for each, GMT
+
+    //each date integer has built in getter & setters -- getters return times relative to the computer it is running on, unless you use the "UTC versions"
+    console.log(`Today is ${today}. Break that down... year: ${today.getFullYear()}, month: ${today.getMonth()}, day: ${today.getDay()}, date: ${today.getDate()}, hour: ${today.getHours()}, minute: ${today.getMinutes()}, second: ${today.getSeconds()}, millisecond: ${today.getMilliseconds()}!`);
+
+    let future = new Date();
+    future.setMonth(10);
+    future.setDate(17);
+    future.setFullYear(2030);
+    console.log(future);
+
+    let untilFuture = future - today; //returns difference in dates in milliseconds
+    console.log(untilFuture);
+})();
+
+//regex objects
+(function (){
+    function checkPwdComplexity(password){
+        let regex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$');//will check for lowercase, uppercase, numbers, and at least 8 chars long
+        return regex.test(password);
+    }
+    function checkPwdComplexity2(password){
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/; //other way to put the above, don't need escpae char on digit
+        return regex.test(password);
+    }
+    console.log(`abc123 is a strong password! ${checkPwdComplexity('abc123')}`);
+    console.log(`AUn89$ghC32-BV is a strong password! ${checkPwdComplexity('AUn89$ghC32-BV')}`);
+    console.log(`pass123 is a strong password! ${checkPwdComplexity2('pass123')}`);
+    console.log(`H5P3gc-89Cv!a is a strong password! ${checkPwdComplexity2('H5P3gc-89Cv!a')}`);
+
+    function findAlerts(logData){
+        let regex = /ERROR(.*?):(.*?);/g;//regex for anything that says error plus text following until it reaches a colon. By default, regex only looks for first match then stops looking, so the "g" for global keeps looking. The parentheses are called "capture groups"
+        console.log(regex.exec(logData));
+        console.log(regex.exec(logData));
+        return regex.exec(logData);//note that a regex function returns an array
+    }
+    let data = "INFO:OK;ERROR(HIGH):Something broke;ERROR(LOW):Something fishy;";
+    let result = findAlerts(data);
+    console.log(result);
+    console.log(result[0]);//bc regex is an array, you can access individual indices
+    console.log(result.input);//access regex result by property... because in JS, arrays are actually just objects :) 
+})();
