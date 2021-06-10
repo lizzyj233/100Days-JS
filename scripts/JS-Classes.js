@@ -30,9 +30,17 @@
             super(firstName, lastName, age);//super() calls the constructor on the class we are extending
             this._enrolledCourses = [];
         }
+        static fromPerson(person){
+            return new Student(person.firstName, person.lastName, person.age);
+        }
+        static studentID(){
+            return 123456;
+        }
+
         enroll(courseId){
             this._enrolledCourses.push(courseId);
         }
+        //getCourses() is NOT a static method bc you have to create an instance of this class to access; can't access by calling "Student.getCourses()"
         getCourses(){
             return this.fullName + "'s enrolled courses are: " + this._enrolledCourses.join(', ');
         }
@@ -43,7 +51,7 @@
     let liz = new Person ('Liz', 'Loftus', 26);
     console.log(liz);
 
-    liz.fullName = "Penny Lane";
+    liz.fullName = "Penny Lane";//manipulate properties previously defined
 
     console.log(liz.fullName);
     console.log(liz.isAdult());
@@ -53,4 +61,9 @@
     kyle.enroll('CS120');
     console.log(kyle);
     console.log(kyle.getCourses());
+
+    let lizStudent = Student.fromPerson(liz);//uses an already existing Person object to create a Student object via static function
+    console.log(lizStudent);
+    console.log(Student.studentID());//static functions do not require an object to be created to be accessed
+    
 })();
