@@ -11,7 +11,7 @@ class Courses{
     static fee = 10.95;
     
     isOpenRegistration(){
-        return this.age === "open";
+        return this.status === "open";
     }
 }
 class Agenda extends Courses{
@@ -44,5 +44,8 @@ class Student{
         return `${this.fullName} is enrolled in the following courses: ${this._enrolledCourses.join(',')}`;
     }
 }
-let course1 = new Courses(1, "JavaScript 101", "Dr. Codez", 10, "open");
-console.log(course1.fee);
+
+let course1 = new Courses(1, "Spanish 101", "Senor Chang", 10, "open");
+let course2 = new Courses(2, "Starting C#", "Miss Code", 12, "open");
+let course3 = new Courses(3, "Conspiracy Theories", "Professor Professorson", 10, "closed");
+let course4 = new Courses(4, "Intro to Ladders", "Mr. Teacher", 10, "open");
